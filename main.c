@@ -3,11 +3,11 @@
 #include "display.h"
 
 
-void populate(int full[display_SIZE][display_SIZE])
+void populate(int full[display_SIZE][display_SIZE], int prob)
 {
 	for(int row = 0; row<display_SIZE;row++)
 		for(int col=0;col<display_SIZE;col++)
-			full[row][col] = rand()%2;
+			full[row][col] = (rand()%prob)==0;
 }
 
 void update(int full[display_SIZE][display_SIZE])
@@ -26,14 +26,14 @@ void update(int full[display_SIZE][display_SIZE])
 }
 		
 
-int main()
+int main(int argc, char* argv[])
 {
-	display_init();
+	display_init(atoi(argv[1]));
 	int full[display_SIZE][display_SIZE];
 	for(int row=0;row<display_SIZE;row++)
 		for(int col=0;col<display_SIZE;col++)
 			full[row][col]=0;
-	populate(full);
+	populate(full,atoi(argv[2]));
 	do{
 		display_render(full);
 		update(full);

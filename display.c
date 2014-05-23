@@ -1,13 +1,14 @@
 #include <ncurses.h>
 #include "display.h"
 
-const int display_SIZE = 40;
+int display_SIZE = 10;
 
-void display_init()
+void display_init(int size)
 {
 	initscr();
 	raw();
 	noecho();
+	display_SIZE = size;
 }
 
 void display_destroy()
