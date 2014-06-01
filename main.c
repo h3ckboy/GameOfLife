@@ -16,11 +16,11 @@ void update(int full[display_SIZE][display_SIZE])
 	{
 		for(int col=0;col<display_SIZE;col++)
 		{
-			int neighbors = -1;
+			int neighbors = full[row][col]*-1;
 			for(int dr=(row==0?0:-1);dr<=(row==display_SIZE?0:1);dr++)
 				for(int dc=(col==0?0:-1);dc<=(col==display_SIZE?0:1);dc++)
 					neighbors+=full[row+dr][col+dc];
-			full[row][col] = ((full[row][col]==1&&neighbors==2)||neighbors==3);
+			full[row][col] = ((full[row][col]&&neighbors==2)||neighbors==3);
 		}
 	}
 }
