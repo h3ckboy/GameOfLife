@@ -12,6 +12,10 @@ compile using make (makefile included)
 
 run `main SIZE 1/Probability`
 
+press any key to step forward in simulation.
+
+press q to quit.
+
 SIZE -> The size of the square.
 1/Probability -> Basically how much of the field do you want to start alive.
 
